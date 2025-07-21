@@ -20,37 +20,35 @@
       text-align: center;
     }
     .username {
+      display: block;
       text-align: right;
-      font-size: 1.5rem;   /* h1보다 약간 작게 */
+      font-size: 1.5rem;
       font-weight: bold;
       color: #444;
-      margin-top: 0.5rem;  /* 한 칸 아래로 */
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 0.5rem;
+      width: 100%;
     }
-    .subtitle {
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 40px;
-      font-weight: 500;
-      font-style: italic;
+    /* PC용 (화면이 768px 이상일 때) */
+    @media (min-width: 768px) {
+      .username {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 2rem; /* 제목보다 살짝 오른쪽 */
+      }
     }
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 2rem 0 3rem 0; /* 위아래 간격 조정 */
       display: grid;
       gap: 20px;
       width: 100%;
       max-width: 960px;
-      /* 기본은 1열 */
       grid-template-columns: 1fr;
     }
     @media (min-width: 768px) {
       ul {
-        /* 넓은 화면에서 3열 */
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -70,6 +68,14 @@
       font-weight: 600;
       font-size: 18px;
       display: block;
+      text-align: center;
+    }
+    footer {
+      margin-top: 2rem;
+      color: #777;
+      font-size: 0.9rem;
+      width: 100%;
+      max-width: 960px;
       text-align: center;
     }
   </style>
