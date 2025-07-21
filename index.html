@@ -16,11 +16,11 @@
     h1 {
       color: #222;
       margin-bottom: 10px;
-      width: 300px;
+      width: 100%;
+      text-align: center;
     }
     .subtitle {
-      width: 300px;
-      text-align: right;
+      text-align: center;
       font-size: 14px;
       color: #555;
       margin-bottom: 40px;
@@ -30,12 +30,22 @@
     ul {
       list-style: none;
       padding: 0;
-      width: 300px;
-      line-height: 2;
+      margin: 0;
+      display: grid;
+      gap: 20px;
+      width: 100%;
+      max-width: 960px;
+      /* 기본은 1열 */
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      ul {
+        /* 넓은 화면에서 3열 */
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
     li {
       background: white;
-      margin: 10px 0;
       padding: 15px 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -50,6 +60,7 @@
       font-weight: 600;
       font-size: 18px;
       display: block;
+      text-align: center;
     }
   </style>
 </head>
